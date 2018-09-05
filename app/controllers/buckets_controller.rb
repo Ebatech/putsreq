@@ -80,13 +80,18 @@ class BucketsController < ApplicationController
   end
 
   def record
-    result = RecordRequest.call(bucket: bucket, rack_request: request)
-    recorded_response = result.response
+    if (!bucket)
+      render plain: "bucket not found",
+             status: 404
+    else
+      result = RecordRequest.call(bucket: bucket, rack_request: request)
+      recorded_response = result.response
 
-    response.headers.merge! recorded_response.headers.to_h
+      response.headers.merge! recorded_response.headers.to_h
 
-    render plain: body_as_string(recorded_response),
-           status: recorded_response.status
+      render plain: body_as_string(recorded_response),
+             status: recorded_response.status
+    end
   end
 
   private

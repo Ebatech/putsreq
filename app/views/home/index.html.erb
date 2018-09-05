@@ -27,18 +27,20 @@
               <h4 class="tm20">Forward requests</h4>
               <p>You can easily <a href="https://github.com/Ebatech/PutsReq#forwardto">forward requests to another URL</a>, including <a href="https://github.com/Ebatech/PutsReq#cli">localhost</a>.
           </div>
-          <% if @buckets.any?  %>
-            <div class="col-md-5">
-              <div class="history">
-                <h4 class="bm0 tm0">History</h4>
-                <small>View and manage your buckets:</small>
-                <ul class="tm5">
-                  <% @buckets.each do |bucket| %>
-                    <li><%= link_to "#{bucket.name} (#{bucket.requests_count})", bucket_path(bucket.token) %></li>
-                  <% end %>
-                </ul>
+          <% if user_signed_in? %>
+            <% if @buckets.any?  %>
+              <div class="col-md-5">
+                <div class="history">
+                  <h4 class="bm0 tm0">History</h4>
+                  <small>View and manage your buckets:</small>
+                  <ul class="tm5">
+                    <% @buckets.each do |bucket| %>
+                      <li><%= link_to "#{bucket.name} (#{bucket.requests_count})", bucket_path(bucket.token) %></li>
+                    <% end %>
+                  </ul>
+                </div>
               </div>
-              </div>
+            <% end %>
           <% end %>
         </div>
       </section>
