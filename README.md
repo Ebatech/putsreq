@@ -4,7 +4,7 @@
 
 ## PutsReq
 
-PutsReq lets you record HTTP requests and simulate responses like no other tool available. [Try it now](http://putsreq.com)!
+PutsReq lets you record HTTP requests and simulate responses like no other tool available. [Try it now](http://ebatech-putsreq.herokuapp.com)!
 
 Check this post: [Play Rock-paper-scissors with Slack and PutsReq](http://www.pablocantero.com/blog/2014/10/12/play-rock-paper-scissors-with-slack-and-putsreq/) for some other examples.
 
@@ -19,7 +19,7 @@ Check the list below with the request attributes you can access to create your o
 #### request
 
 ```javascript
-// curl -X POST -H 'X-MyHeader: MyHeaderValue' -d 'name=Pablo' https://putsreq.com/<YOUR-TOKEN>
+// curl -X POST -H 'X-MyHeader: MyHeaderValue' -d 'name=Pablo' https://ebatech-putsreq.herokuapp.com/<YOUR-TOKEN>
 
 request.request_method
 // => POST
@@ -37,7 +37,7 @@ request.headers['HTTP_X_MYHEADER']
 Parsing a JSON request:
 
 ```javascript
-// curl -i -X POST -H 'Content-Type: application/json' -d '{"message":"Hello World"}' https://putsreq.com/<YOUR-TOKEN>
+// curl -i -X POST -H 'Content-Type: application/json' -d '{"message":"Hello World"}' https://ebatech-putsreq.herokuapp.com/<YOUR-TOKEN>
 
 var parsedBody = JSON.parse(request.body)
 
@@ -113,12 +113,12 @@ PutsReq supports [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_shar
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script>
     // Sample PutsReq Response Builder
-    // https://putsreq.com/<YOUR-TOKEN>/inspect
+    // https://ebatech-putsreq.herokuapp.com/<YOUR-TOKEN>/inspect
     // response.headers['Content-Type'] = 'application/json';
     // response.body = { 'message': 'Hello World' };
 
     // Sample Ajax call
-    $.get('https://putsreq.com/<YOUR-TOKEN>', function(data) {
+    $.get('https://ebatech-putsreq.herokuapp.com/<YOUR-TOKEN>', function(data) {
       alert(data.message);
       // => 'Hello World'
     });

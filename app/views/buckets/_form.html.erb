@@ -6,7 +6,7 @@
       <h4>Bucket name
       <small><em>You can change it anytime.</em></small>
       </h4>
-      <div class="input-group putsreq-name bm30">
+      <div class="input-group putsreq-name bm10">
         <%= f.text_field :name %>
         <% if bucket.fork %>
           <p><small>forked from <%= link_to bucket.fork.name, bucket_path(bucket.fork.token) %></small></p>
@@ -20,7 +20,7 @@
       <div id="request-count-react-root"></div>
     </div>
   </div>
-  <h4>Response Builder&nbsp;<a href="https://github.com/phstc/putsreq#response-builder" target="_blank"><span class="glyphicon glyphicon-info-sign"></span></a></h4>
+  <h4>Response Builder&nbsp;<a href="https://github.com/Ebatech/PutsReq#response-builder" target="_blank"><span class="glyphicon glyphicon-info-sign"></span></a></h4>
   <div id="editor" name="editor" style="width: 100%; height: 150px"></div>
   <textarea id="response_builder" name="response_builder" style="display:none;"></textarea>
   <p>

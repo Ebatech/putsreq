@@ -3,16 +3,18 @@
     <div class="">
       <header>
         <%= image_tag 'logo.png' %>
-        <h3><em>PutsReq</em> lets you record HTTP requests and fake responses like no other tool available. Try it now!</h3>
+        <h3><em>PutsReq</em> lets you record HTTP requests and fake responses.</h3>
         <%= form_for :bucket, url: buckets_path do |f| %>
-          <button class="btn btn-primary btn-large">Create a PutsReq</button>
-          <em>
-            <% if user_signed_in? %>
+          <% if user_signed_in? %>
+            <button class="btn btn-primary btn-large">Create a PutsReq</button>
+            <em>
               <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-            <% else %>
-              <%= link_to 'Sign in', new_user_session_path  %> | <%= link_to 'Sign up', new_user_registration_path %> | <%= link_to 'Donate to PutsReq', 'https://opencollective.com/putsreq/donate' %>
-            <% end %>
-          </em>
+            </em>
+          <% else %>
+            <em>
+              <%= link_to 'Sign in', new_user_session_path  %> | <%= link_to 'Sign up', new_user_registration_path %>
+            </em>
+          <% end %>
         <% end %>
       </header>
       <section class="start">
@@ -21,9 +23,9 @@
             <h4>Record requests</h4>
             <p>Change your target URL to a PutsReq URL to start recording your requests.</p>
             <h4 class="tm20">Fake responses</h4>
-            <p>PutsReq is the easiest way to fake HTTP responses. You can define the response status, headers and body you want using <a href="https://github.com/phstc/putsreq#response-builder">JavaScript</a>.
+            <p>PutsReq is the easiest way to fake HTTP responses. You can define the response status, headers and body you want using <a href="https://github.com/Ebatech/PutsReq#response-builder">JavaScript</a>.
               <h4 class="tm20">Forward requests</h4>
-              <p>You can easily <a href="https://github.com/phstc/putsreq#forwardto">forward requests to another URL</a>, including <a href="https://github.com/phstc/putsreq#cli">localhost</a>.
+              <p>You can easily <a href="https://github.com/Ebatech/PutsReq#forwardto">forward requests to another URL</a>, including <a href="https://github.com/Ebatech/PutsReq#cli">localhost</a>.
           </div>
           <% if @buckets.any?  %>
             <div class="col-md-5">
