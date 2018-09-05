@@ -1,15 +1,3 @@
-development:
-  clients:
-    default:
-      database: puts_req
-      hosts:
-        - <%= ENV.fetch('MONGO_URI', 'db') %>
-test:
-  clients:
-    default:
-      database: puts_req_test
-      hosts:
-        - <%= ENV.fetch('MONGO_URI', 'db') %>
 production:
   clients:
     default:
