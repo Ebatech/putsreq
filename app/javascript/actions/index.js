@@ -36,9 +36,9 @@ const updateRequestsCount = count => {
       page: page
     })
 
-    if (count === 1) {
+//    if (count === 1) {
       return fetchPage(1)(dispatch, getState)
-    }
+//    }
   }
 }
 
