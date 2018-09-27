@@ -44,16 +44,16 @@ export default class Pagination extends Component {
     return(
       <ul className="pagination">
         <li className={this.firstClassNames()}>
-          <a onClick={this.handleFirstPage.bind(this)}>First</a>
+          <a onClick={this.handleFirstPage.bind(this)}>Last</a>
         </li>
         <li className={this.previousClassNames()}>
-          <a onClick={this.handlePreviousPage.bind(this)}>Previous</a>
+          <a onClick={this.handlePreviousPage.bind(this)}>Next</a>
         </li>
         <li className={this.nextClassNames()}>
-          <a onClick={this.handleNextPage.bind(this)}>Next</a>
+          <a onClick={this.handleNextPage.bind(this)}>Previous</a>
         </li>
         <li className={this.lastClassNames()}>
-          <a onClick={this.handleLastPage.bind(this)}>Last</a>
+          <a onClick={this.handleLastPage.bind(this)}>First</a>
         </li>
       </ul>
     )
